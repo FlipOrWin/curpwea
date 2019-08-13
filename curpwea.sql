@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2019 a las 00:56:12
+-- Tiempo de generación: 13-08-2019 a las 08:29:06
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -138,10 +138,17 @@ CREATE TABLE `personas` (
   `lastseconame` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sexo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `estado` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nacimiento` date NOT NULL,
+  `nacimiento` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `personas`
+--
+
+INSERT INTO `personas` (`id`, `name`, `seconame`, `lastname`, `lastseconame`, `sexo`, `estado`, `nacimiento`, `created_at`, `updated_at`) VALUES
+(1, 'JUAN', 'FRANCISCO', 'GALVAN', 'DE SANTIAGO', 'HOMBRE', 'DURANGO', '2019-11-01 00:00:00', '2019-08-12 05:00:00', '2019-08-12 05:07:22');
 
 -- --------------------------------------------------------
 
@@ -310,7 +317,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`

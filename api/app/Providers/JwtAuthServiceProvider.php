@@ -14,7 +14,6 @@ class JwtAuthServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        require_once app_path() . '/Helpers/jwatAuth.php';
     }
 
     /**
@@ -25,5 +24,6 @@ class JwtAuthServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        require_once app_path() . '/Helpers/JwtAuth.php';
     }
 }

@@ -17,11 +17,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => 'cors'], function(){
+    Route::resource('curps', 'API\CurpsController');
+    Route::resource('personas', 'API\PersonasController');
+    Route::resource('rfcs', 'API\RfcsController');
+    Route::resource('estados', 'API\EstadosController');
 
-Route::resource('curps', 'API\CurpsController');
-Route::resource('personas', 'API\PersonasController');
-Route::resource('rfcs', 'API\RfcsController');
-Route::resource('estados', 'API\EstadosController');
+    Route::post('register', 'API\UserController@register');
+    Route::post('login', 'API\UserController@login');
+}); 
 
-Route::post('register', 'API\UserController@register');
-Route::post('login', 'API\UserController@login');
